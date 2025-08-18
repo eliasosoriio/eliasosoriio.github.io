@@ -1,0 +1,32 @@
+@import "tailwindcss";
+@plugin "@midudev/tailwind-animations";
+
+/* Importa estilos de Flowbite */
+@import "flowbite";
+
+@font-face {
+    font-family: 'Inter';
+    src: url(../assets/fonts/inter.woff2) format('woff');
+    font-style: normal;
+    font-weight: 100 700;
+    font-display: swap;
+}
+
+@theme {
+    --color-primary: #e2e1e1;
+    --color-primary-light: #ceecff;
+    --color-primary-dark: #383838;
+    --color-primary-gray: #595959;
+    --color-midu-lol-light: #ceecff;
+
+    /* Breakpoint */
+    --breakpoint-sm: 350px;
+
+    /* Fuentes */
+    --font-display: 'Inter', system-ui, sans-serif;
+}
+
+* {
+    font-family: var(--font-display);
+    box-sizing: border-box;
+}
