@@ -1,6 +1,6 @@
 import { Avatar, Blockquote } from "flowbite-react";
 
-export function Quote() {
+export function Quote({phrase, avatar, name, job}) {
   return (
     <figure className="max-w-screen-md ml-0 text-left">
       <svg
@@ -14,16 +14,14 @@ export function Quote() {
       </svg>
 
       <Blockquote>
-        <p className="text-1xl font-medium italic text-primary-gray">
-          "En LAMARTA confiamos en Elías para potenciar nuestra presencia digital. Gracias a su enfoque personalizado, hemos logrado una web que refleja nuestra esencia y un sistema de fidelización que ha fortalecido nuestra relación con los clientes."
-        </p>
+        <p className="text-1xl font-medium italic text-primary-gray">{phrase}</p>
       </Blockquote>
 
       <figcaption className="mt-6 flex items-center space-x-3">
-        <Avatar rounded size="md" img="https://r11.es/assets/jose_profile.jpg" alt="profile picture" />
+        <Avatar rounded size="md" img={avatar} alt="profile picture" />
         <div className="flex flex-col">
-          <cite className="font-medium text-gray-900">Jose</cite>
-          <cite className="text-sm text-gray-500">CEO de LAMARTA</cite>
+          <cite className="font-medium text-gray-900">{name}</cite>
+          <cite className="text-sm text-gray-500">{job}</cite>
         </div>
       </figcaption>
     </figure>

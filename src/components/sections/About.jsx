@@ -9,7 +9,7 @@ function About() {
             <img src="https://r11.es/assets/about_1.png" alt="About macbook image" className='rounded-3xl md:max-w-72' />
         </div>
         <div className='flex sm:flex-col md:items-center gap-5 md:gap-10 md:flex-row'>
-            <p>Con Web Service, Club Service y Ride Service, ayudamos a que los negocios locales y las marcas emergentes den un salto de calidad, conecten mejor con sus clientes y gestionen todo de manera más eficiente.</p>
+            <p>Mi enfoque siempre ha sido escuchar primero, entender la historia detrás de cada negocio y luego traducir esa esencia en soluciones digitales prácticas y efectivas. No se trata solo de crear páginas web o sistemas de fidelización, sino de construir herramientas que realmente ayuden a los comercios a conectar con sus clientes, diferenciarse de la competencia y crecer de forma sostenible.</p>
             <img src="https://r11.es/assets/about_2.png" alt="About iphone image" className='rounded-3xl md:max-w-72' />
         </div>
     </section>
