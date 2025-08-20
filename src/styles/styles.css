@@ -13,11 +13,15 @@
 }
 
 @theme {
+    /* Colores */
     --color-primary: #e2e1e1;
     --color-primary-light: #ceecff;
     --color-primary-dark: #383838;
     --color-primary-gray: #595959;
     --color-primary-light-gray: #DEDEDE;
+
+    /* Border Radius */
+    --radius-default: 24px;
 
     /* Breakpoint */
     --breakpoint-sm: 350px;

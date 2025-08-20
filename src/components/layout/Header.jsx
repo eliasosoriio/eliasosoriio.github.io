@@ -1,5 +1,4 @@
-
-import { Button, Navbar, NavbarCollapse, NavbarLink, NavbarToggle, DarkThemeToggle } from "flowbite-react";
+import { Button, Navbar, NavbarCollapse, NavbarLink, NavbarToggle } from "flowbite-react";
 
 const personalizedNavTheme = {
   "root": {
@@ -24,7 +23,7 @@ const personalizedNavTheme = {
     "base": "flex items-center"
   },
   "collapse": {
-    "base": "w-full md:block md:w-auto sm:mt-2 md:mt-0 sm:bg-primary-gray py-3 px-12 rounded-3xl",
+    "base": "w-full md:block md:w-auto sm:mt-2 md:mt-0 sm:bg-primary-gray py-3 px-12 rounded-default",
     "list": "mt-4 flex flex-col md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium",
     "hidden": {
       "on": "hidden",
@@ -47,13 +46,32 @@ const personalizedNavTheme = {
     "icon": "h-6 w-6 shrink-0",
     "title": "sr-only"
   }
-}
+};
+
+const handleScroll = (id) => {
+  const section = document.querySelector(id);
+  if (!section) return;
+
+  if (window.innerWidth < 768) {
+    // SOLO en móvil: aplicamos offset
+    const yOffset = -300; // altura
+    const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  } else {
+    // En desktop: scroll normal
+    const yOffset = -100; // altura
+    const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  }
+};
 
 export function Header() {
   return (
     <Navbar fluid rounded theme={personalizedNavTheme}>
       <div className="flex md:order-2">
-        <Button className="bg-primary-gray hover:text-primary hover:bg-primary-gray transition-transform cursor-pointer rounded-3xl md:mr-0 sm:mr-3 h-11"><a href="tel:+34625646270">Empieza ya</a></Button>
+        <Button className="bg-primary-gray hover:text-primary hover:bg-primary-gray transition-transform cursor-pointer rounded-default md:mr-0 sm:mr-3 h-11">
+          <a href="tel:+34625646270">Empieza ya</a>
+        </Button>
         <NavbarToggle />
       </div>
       <NavbarCollapse>
@@ -63,9 +81,8 @@ export function Header() {
         <NavbarLink
           href="#about"
           onClick={(e) => {
-            e.preventDefault(); // prevenir comportamiento por defecto
-            const section = document.querySelector('#about');
-            section.scrollIntoView({ behavior: 'smooth' }); // scroll suave
+            e.preventDefault();
+            handleScroll("#about");
           }}
         >
           Sobre mí
@@ -73,9 +90,8 @@ export function Header() {
         <NavbarLink
           href="#services"
           onClick={(e) => {
-            e.preventDefault(); // prevenir comportamiento por defecto
-            const section = document.querySelector('#services');
-            section.scrollIntoView({ behavior: 'smooth' }); // scroll suave
+            e.preventDefault();
+            handleScroll("#services");
           }}
         >
           Servicios
@@ -83,9 +99,8 @@ export function Header() {
         <NavbarLink
           href="#contact"
           onClick={(e) => {
-            e.preventDefault(); // prevenir comportamiento por defecto
-            const section = document.querySelector('#contact');
-            section.scrollIntoView({ behavior: 'smooth' }); // scroll suave
+            e.preventDefault();
+            handleScroll("#contact");
           }}
         >
           Contacto
