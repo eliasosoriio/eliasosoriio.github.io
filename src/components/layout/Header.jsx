@@ -24,7 +24,7 @@ const personalizedNavTheme = {
     "base": "flex items-center"
   },
   "collapse": {
-    "base": "w-full md:block md:w-auto sm:mt-2 md:mt-0 sm:bg-primary-gray py-3 px-12 rounded-2xl",
+    "base": "w-full md:block md:w-auto sm:mt-2 md:mt-0 sm:bg-primary-gray py-3 px-12 rounded-3xl",
     "list": "mt-4 flex flex-col md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium",
     "hidden": {
       "on": "hidden",
@@ -53,7 +53,7 @@ export function Header() {
   return (
     <Navbar fluid rounded theme={personalizedNavTheme}>
       <div className="flex md:order-2">
-        <Button className="bg-primary-gray hover:text-primary hover:bg-primary-gray transition-transform cursor-pointer rounded-2xl md:mr-0 sm:mr-3 h-11"><a href="tel:+34625646270">Empieza ya</a></Button>
+        <Button className="bg-primary-gray hover:text-primary hover:bg-primary-gray transition-transform cursor-pointer rounded-3xl md:mr-0 sm:mr-3 h-11"><a href="tel:+34625646270">Empieza ya</a></Button>
         <NavbarToggle />
       </div>
       <NavbarCollapse>

@@ -6,7 +6,7 @@ function Contact() {
     const emailAddress = 'eliasosorio.r11@gmail..com';
 
     return (
-        <section className="flex flex-col gap-5 items-start rounded-2xl" id='contact'>
+        <section className="flex flex-col gap-5 items-start rounded-3xl" id='contact'>
             <h2 className="text-3xl font-bold">Contacto</h2>
             <p>
                 ¿Tienes alguna duda o quieres trabajar conmigo?
@@ -15,7 +15,7 @@ function Contact() {
             <div className="flex flex-col sm:flex-row gap-4 w-full">
                 <a
                     href={`tel:${phoneNumber}`}
-                    className="w-full sm:w-full md:w-auto flex items-center justify-center gap-2 bg-primary-gray hover:bg-primary-dark text-white font-semibold py-3 px-6 rounded-2xl transition-colors"
+                    className="w-full sm:w-full md:w-auto flex items-center justify-center gap-2 bg-primary-gray hover:bg-primary-dark text-white font-semibold py-3 px-6 rounded-3xl transition-colors"
                 >
                     <PhoneIcon className="w-5 h-5" />
                     Llamar
@@ -23,7 +23,7 @@ function Contact() {
 
                 <a
                     href={`mailto:${emailAddress}`}
-                    className="w-full sm:w-full md:w-auto flex items-center justify-center gap-2 bg-primary-dark hover:bg-primary-gray text-white font-semibold py-3 px-6 rounded-2xl transition-colors"
+                    className="w-full sm:w-full md:w-auto flex items-center justify-center gap-2 bg-primary-dark hover:bg-primary-gray text-white font-semibold py-3 px-6 rounded-3xl transition-colors"
                 >
                     <EnvelopeIcon className="w-5 h-5" />
                     Email

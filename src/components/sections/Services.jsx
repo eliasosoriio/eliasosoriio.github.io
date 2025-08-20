@@ -18,17 +18,18 @@ function Services() {
   return (
     <section id='services'>
         {/* Pestañas */}
-        <div className='flex justify-around mb-5 bg-primary-gray font-bold text-gray-400 rounded-2xl text-sm'>
+        <div className='flex justify-around mb-5 bg-primary-gray font-bold text-gray-400 rounded-3xl text-sm'>
             {tabs.map((tab, index) => (
                 <button
                     key={index}
                     onClick={() => handleTabClick(index)}
                     className={`
-                        py-2.5 px-5 
-                        ${activeTab === index ? 'text-white' : 'border-transparent font-normal'} 
-                        bg-transparent 
+                        py-2.5 px-5
+                        ${activeTab === index ? 'text-white' : 'border-transparent font-normal'}
+                        bg-transparent
                         cursor-pointer
                         transition-all
+                        hover:text-white
                     `}
                 >
                     {tab}
@@ -44,8 +45,8 @@ function Services() {
             onSlideChange={(swiper) => setActiveTab(swiper.activeIndex)} // actualizar tab al deslizar
         >
             <SwiperSlide>
-                <div className="px-6 rounded-2xl">
-                    <h3 className="text-2xl font-bold mb-3 text-primary-dark">Web Service</h3>
+                <div className="px-6 rounded-3xl">
+                    <h3 className="text-3xl font-bold mb-3 text-primary-dark">Web Service</h3>
                     <p className="text-primary-gray mb-4">
                         Una web pensada para tu marca, hecha para destacar y dejar huella en cada visita.
                     </p>
@@ -58,8 +59,8 @@ function Services() {
                 </div>
             </SwiperSlide>
             <SwiperSlide>
-                <div className="px-6 rounded-2xl">
-                    <h3 className="text-2xl font-bold mb-3 text-primary-dark">Club Service</h3>
+                <div className="px-6 rounded-3xl">
+                    <h3 className="text-3xl font-bold mb-3 text-primary-dark">Club Service</h3>
                     <p className="text-primary-gray mb-4">
                         Premia la lealtad de tus clientes y aumenta tus ingresos con una plataforma fácil de usar, atractiva y diseñada para que vuelvan.
                     </p>
@@ -72,8 +73,8 @@ function Services() {
                 </div>
             </SwiperSlide>
             <SwiperSlide>
-                <div className="px-6 rounded-2xl">
-                    <h3 className="text-2xl font-bold mb-3 text-primary-dark">Ride Service</h3>
+                <div className="px-6 rounded-3xl">
+                    <h3 className="text-3xl font-bold mb-3 text-primary-dark">Ride Service</h3>
                     <p className="text-primary-gray mb-4">
                         Organiza las entregas de forma rápida, eficiente y sin depender de terceros. Más control, menos complicaciones.
                     </p>
