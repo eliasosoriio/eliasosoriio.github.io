@@ -139,6 +139,19 @@ El renderizado se delega en `src/pages/Post.jsx`, que mapea cada bloque a su com
 - El contenido editorial (posts, clientes, trayectoria) se mantiene en archivos JS planos para facilitar la edición y mantener el repositorio sin servicios externos.
 - `scrollbar-gutter: stable` se aplica a `<html>` para evitar que el layout salte horizontalmente al navegar entre páginas con y sin scroll.
 
+## Despliegue
+
+El proyecto puede publicarse en GitHub Pages manteniendo `BrowserRouter`. Para evitar el 404 al refrescar o abrir directamente rutas internas como `/blog` o `/contacto`, el repositorio incluye un fallback SPA:
+
+- `public/404.html` redirige cualquier ruta desconocida a `/?p=...`;
+- `src/main.jsx` restaura la URL original antes de que React Router monte la aplicación.
+
+Para publicar en GitHub Pages:
+
+- ejecuta `npm run build` para generar `dist/`;
+- publica el contenido de `dist/`;
+- si el repositorio sigue siendo `eliasosoriio.github.io`, la web se sirve desde la raíz `/` y no hace falta configurar `base` en Vite.
+
 ## Mantenimiento
 
 Si se publica un nuevo artículo, hay que añadir la entrada correspondiente al array `posts` en `src/data/posts.js` (incluyendo `slug`, `isoDate` y `cover`) y dejar la imagen en `public/posts/`.
