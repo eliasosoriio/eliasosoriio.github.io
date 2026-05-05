@@ -1,8 +1,8 @@
-# r11.es
+# eliasosoriio.github.io
 
 Web personal y portfolio de Elías Osorio. Construida con React, Vite, React Router y Tailwind. Incluye blog, proyectos y trayectoria.
 
-[![Estado](https://img.shields.io/badge/estado-operativo-2d9d78?style=for-the-badge)](https://r11.es)
+[![Estado](https://img.shields.io/badge/estado-operativo-2d9d78?style=for-the-badge)](https://eliasosoriio.github.io)
 [![Frontend](https://img.shields.io/badge/frontend-React_19-61dafb?style=for-the-badge&logo=react&logoColor=000000)](package.json)
 [![Build](https://img.shields.io/badge/build-Vite_7-646cff?style=for-the-badge&logo=vite&logoColor=ffffff)](package.json)
 [![Router](https://img.shields.io/badge/router-React_Router_7-ca4245?style=for-the-badge&logo=reactrouter&logoColor=ffffff)](package.json)
@@ -13,7 +13,7 @@ Web personal y portfolio de Elías Osorio. Construida con React, Vite, React Rou
 
 **Objetivo del proyecto:** mantener una presencia personal clara y editable, con un blog de notas técnicas, una página dedicada al recorrido profesional y un canal directo de contacto, sin depender de plataformas externas.
 
-- [r11.es](#eliasosoriocom)
+- [eliasosoriio.github.io](#eliasosoriocom)
   - [Estado del proyecto](#estado-del-proyecto)
   - [Descripción](#descripción)
   - [Instalación / Puesta en marcha](#instalación--puesta-en-marcha)
@@ -33,7 +33,7 @@ El proyecto se encuentra operativo como web personal y portfolio público. Reún
 
 ## Descripción
 
-`r11.es` centraliza la presencia personal de Elías Osorio en una única aplicación React. La interfaz está diseñada como un portfolio minimalista: tipografía Inter en todo el sitio, paleta acotada (gris, gris oscuro y un acento), y un sistema visual coherente entre páginas internas (eyebrow + título + descripción + contenido).
+`eliasosoriio.github.io` centraliza la presencia personal de Elías Osorio en una única aplicación React. La interfaz está diseñada como un portfolio minimalista: tipografía Inter en todo el sitio, paleta acotada (gris, gris oscuro y un acento), y un sistema visual coherente entre páginas internas (eyebrow + título + descripción + contenido).
 
 La aplicación incluye:
 
@@ -90,7 +90,7 @@ npm run preview
 ## Estructura del proyecto
 
 ```text
-r11.es/
+eliasosoriio.github.io/
 ├── public/                   # Recursos públicos (favicon, fotos de portadas de posts)
 │   └── posts/                # Imágenes utilizadas como cover de cada artículo
 ├── src/
