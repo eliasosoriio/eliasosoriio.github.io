@@ -16,7 +16,7 @@ function Hero() {
               <span className='absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75'></span>
               <span className='relative inline-flex h-2 w-2 rounded-full bg-green-500'></span>
             </span>
-            Disponible para proyectos
+            Disponible para nuevos proyectos
           </span>
           <div className='flex items-center gap-3'>
             <a href='https://github.com/eliasosoriio' target='_blank' rel='noopener noreferrer' aria-label='GitHub' className='text-primary-gray transition hover:text-primary-dark'>

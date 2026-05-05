@@ -86,6 +86,7 @@ npm run preview
 - `npm run build`: genera la build de producción.
 - `npm run preview`: sirve localmente la build generada.
 - `npm run lint`: ejecuta ESLint sobre el código del proyecto.
+- `npm run deploy`: ejecuta la build y publica `dist/` en la rama `gh-pages` mediante `gh-pages`.
 
 ## Estructura del proyecto
 
@@ -141,16 +142,19 @@ El renderizado se delega en `src/pages/Post.jsx`, que mapea cada bloque a su com
 
 ## Despliegue
 
-El proyecto puede publicarse en GitHub Pages manteniendo `BrowserRouter`. Para evitar el 404 al refrescar o abrir directamente rutas internas como `/blog` o `/contacto`, el repositorio incluye un fallback SPA:
+El proyecto puede publicarse en GitHub Pages mediante `gh-pages`, manteniendo `BrowserRouter`. Para evitar el 404 al refrescar o abrir directamente rutas internas como `/blog` o `/contacto`, el repositorio incluye un fallback SPA:
 
 - `public/404.html` redirige cualquier ruta desconocida a `/?p=...`;
 - `src/main.jsx` restaura la URL original antes de que React Router monte la aplicación.
 
 Para publicar en GitHub Pages:
 
-- ejecuta `npm run build` para generar `dist/`;
-- publica el contenido de `dist/`;
+- ejecuta `npm run deploy`;
+- `predeploy` lanzará `npm run build` automáticamente;
+- `gh-pages -d dist` publicará la build en la rama `gh-pages`;
 - si el repositorio sigue siendo `eliasosoriio.github.io`, la web se sirve desde la raíz `/` y no hace falta configurar `base` en Vite.
+
+La guía completa de despliegue está en [DEPLOYMENT.md](DEPLOYMENT.md).
 
 ## Mantenimiento
 
