@@ -1,111 +1,42 @@
-import { Button, Navbar, NavbarCollapse, NavbarLink, NavbarToggle } from "flowbite-react";
+import { Link, useLocation } from "react-router-dom";
 
-const personalizedNavTheme = {
-  "root": {
-    "base": "bg-transparent px-0 py-0 sm:px-4 dark:border-0 dark:bg-transparent animate-fade-in-down",
-    "rounded": {
-      "on": "rounded",
-      "off": ""
-    },
-    "bordered": {
-      "on": "border",
-      "off": ""
-    },
-    "inner": {
-      "base": "mx-auto flex flex-wrap items-center justify-end md:justify-between",
-      "fluid": {
-        "on": "",
-        "off": "container"
-      }
-    }
-  },
-  "brand": {
-    "base": "flex items-center"
-  },
-  "collapse": {
-    "base": "w-full md:block md:w-auto sm:mt-2 md:mt-0 sm:bg-primary-gray py-3 px-12 rounded-default",
-    "list": "mt-4 flex flex-col md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium",
-    "hidden": {
-      "on": "hidden",
-      "off": ""
-    }
-  },
-  "link": {
-    "base": "block py-2 pl-3 pr-4 md:p-0",
-    "active": {
-      "on": "bg-primary-700 text-white md:bg-transparent md:text-primary-700 dark:text-primary",
-      "off": "border-0 text-gray-400 hover:bg-transparent md:border-0 md:hover:bg-transparent hover:text-primary dark:border-gray-700 dark:text-primary-gray dark:hover:bg-transparent dark:hover:text-primary md:dark:hover:bg-transparent md:dark:hover:text-primary"
-    },
-    "disabled": {
-      "on": "text-gray-400 hover:cursor-not-allowed dark:text-gray-600",
-      "off": ""
-    }
-  },
-  "toggle": {
-    "base": "inline-flex items-center rounded-lg p-2 text-sm text-primary-gray dark:text-white hover:bg-transparent hover:cursor-pointer focus:outline-none focus:ring-0 focus:ring-gray-200 md:hidden dark:text-primary-gray dark:hover:bg-transparent dark:focus:ring-gray-600",
-    "icon": "h-6 w-6 shrink-0",
-    "title": "sr-only"
-  }
-};
-
-const handleScroll = (id) => {
-  const section = document.querySelector(id);
-  if (!section) return;
-
-  if (window.innerWidth < 768) {
-    // SOLO en móvil: aplicamos offset
-    const yOffset = -300; // altura
-    const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
-    window.scrollTo({ top: y, behavior: "smooth" });
-  } else {
-    // En desktop: scroll normal
-    const yOffset = -100; // altura
-    const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
-    window.scrollTo({ top: y, behavior: "smooth" });
-  }
-};
+const links = [
+  { to: "/", label: "Inicio", match: (p) => p === "/" },
+  { to: "/sobre-mi", label: "Sobre mí", match: (p) => p.startsWith("/sobre-mi") },
+  { to: "/blog", label: "Blog", match: (p) => p.startsWith("/blog") },
+  { to: "/contacto", label: "Contacto", match: (p) => p.startsWith("/contacto") },
+];
 
 export function Header() {
+  const { pathname } = useLocation();
+
   return (
-    <Navbar fluid rounded theme={personalizedNavTheme}>
-      <div className="flex md:order-2">
-        <Button className="bg-primary-gray hover:text-primary hover:bg-primary-gray transition-transform cursor-pointer rounded-default md:mr-0 sm:mr-3 h-11">
-          <a href="tel:+34625646270">Empieza ya</a>
-        </Button>
-        <NavbarToggle />
-      </div>
-      <NavbarCollapse>
-        <NavbarLink href="#" active>
-          Inicio
-        </NavbarLink>
-        <NavbarLink
-          href="#about"
-          onClick={(e) => {
-            e.preventDefault();
-            handleScroll("#about");
-          }}
-        >
-          Sobre mí
-        </NavbarLink>
-        <NavbarLink
-          href="#services"
-          onClick={(e) => {
-            e.preventDefault();
-            handleScroll("#services");
-          }}
-        >
-          Servicios
-        </NavbarLink>
-        <NavbarLink
-          href="#contact"
-          onClick={(e) => {
-            e.preventDefault();
-            handleScroll("#contact");
-          }}
-        >
-          Contacto
-        </NavbarLink>
-      </NavbarCollapse>
-    </Navbar>
+    <header className="sticky top-0 z-50 flex w-full items-center justify-between gap-3 px-4 py-3 md:px-0 animate-fade-in-down">
+      <nav className="flex h-11 w-full items-center justify-between gap-4 rounded-default bg-primary-dark px-6 text-sm font-medium md:w-auto md:justify-start md:gap-8 md:px-10">
+        <Link to="/" className="font-bold text-white">EO</Link>
+        <span aria-hidden="true" className="text-gray-500">|</span>
+        {links.map(({ to, label, match }) => {
+          const active = match(pathname);
+          return (
+            <Link
+              key={to}
+              to={to}
+              className={`whitespace-nowrap transition-colors ${
+                active ? "text-white" : "text-gray-400 hover:text-white"
+              }`}
+            >
+              {label}
+            </Link>
+          );
+        })}
+      </nav>
+
+      <Link
+        to="/contacto"
+        className="hidden md:inline-flex items-center justify-center bg-primary-dark hover:opacity-90 transition cursor-pointer rounded-default h-11 px-5 font-semibold text-white text-sm"
+      >
+        Contactar
+      </Link>
+    </header>
   );
 }

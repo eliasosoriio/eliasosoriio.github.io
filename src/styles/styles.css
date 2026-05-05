@@ -34,3 +34,7 @@
     font-family: var(--font-display);
     box-sizing: border-box;
 }
+
+html {
+    scrollbar-gutter: stable;
+}
